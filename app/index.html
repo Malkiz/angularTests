@@ -1,13 +1,29 @@
 <!DOCTYPE html>
-<html ng-app="app">
+<html>
     <head>
         <title></title>
+        <base href="/ext/angularTests/app/" />
         <script type="text/javascript" src="../node_modules/angular/angular.min.js"></script>
-        <script type="text/javascript" src="./app.js"></script>
-        <script type="text/javascript" src="./controller.js"></script>
-        <script type="text/javascript" src="./filter.js"></script>
+        <script type="text/javascript" src="../node_modules/angular-route/angular-route.min.js"></script>
+        <script type="text/javascript" src="./js/app.js"></script>
+        <script type="text/javascript" src="./js/passwordController.js"></script>
+        <script type="text/javascript" src="./js/mainController.js"></script>
+        <script type="text/javascript" src="./js/bookController.js"></script>
+        <script type="text/javascript" src="./js/chapterController.js"></script>
+        <script type="text/javascript" src="./js/filter.js"></script>
     </head>
-    <body ng-controller="PasswordController">
-    	<input type="text" ng-model="password" ng-change="grade()" ng-init="grade()" />:{{strength}}
+    <body ng-app="app">
+        <div ng-controller="PasswordController">
+            Password: <input type="text" ng-model="password" ng-change="grade()" ng-init="grade()" />:{{strength}}
+        </div>
+        <div ng-controller="MainController">
+            Choose:
+            <a href="Book/Moby">Moby</a> |
+            <a href="Book/Moby/ch/1">Moby: Ch1</a> |
+            <a href="Book/Gatsby">Gatsby</a> |
+            <a href="Book/Gatsby/ch/4?key=value">Gatsby: Ch4</a> |
+            <a href="Book/Scarlet">Scarlet Letter</a><br/>
+            <div ng-view></div>
+        </div>
     </body>
 </html>

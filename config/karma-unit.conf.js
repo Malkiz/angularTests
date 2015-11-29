@@ -10,6 +10,7 @@ module.exports = function(config) {
         // list of files / patterns to load in the browser
         files: [
             'node_modules/angular/angular.js',
+            'node_modules/angular-route/angular-route.js',
             'node_modules/angular-mocks/angular-mocks.js',
             // Includes
             'app/app.js',
@@ -21,7 +22,9 @@ module.exports = function(config) {
         exclude: [],
         // preprocess matching files before serving them to the browser
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-        preprocessors: {},
+        preprocessors: {
+            '**/*.html': ['ng-html2js']
+        },
         // test results reporter to use
         // possible values: 'dots', 'progress'
         // available reporters: https://npmjs.org/browse/keyword/karma-reporter
