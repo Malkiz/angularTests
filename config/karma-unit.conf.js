@@ -12,6 +12,7 @@ module.exports = function(config) {
             'node_modules/angular/angular.js',
             'node_modules/angular-mocks/angular-mocks.js',
             // Includes
+            'app/app.js',
             'app/**/*.js',
             // Tests
             'test/unit/**/*.spec.js'
